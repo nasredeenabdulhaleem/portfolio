@@ -56,7 +56,7 @@ typings/
 
 # gatsby files
 .cache/
-public
+# public folder is NOT ignored - it contains logo, favicon, CV
 
 # Mac files
 .DS_Store

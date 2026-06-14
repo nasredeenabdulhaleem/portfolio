@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
@@ -12,8 +13,10 @@ import Footer from './sections/Footer'
 import CommandPalette from './components/CommandPalette'
 import { useAppStore } from './store/useAppStore'
 import Cursor from './components/Cursor'
+import AdminLogin from './pages/AdminLogin'
+import AdminDashboard from './pages/AdminDashboard'
 
-function App() {
+function PortfolioLayout() {
   const { setCommandPaletteOpen } = useAppStore()
 
   useEffect(() => {
@@ -56,6 +59,19 @@ function App() {
         }}
       />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PortfolioLayout />} />
+        <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
