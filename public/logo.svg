@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0A0F1C"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#F5B301"/>
+      <stop offset="100%" stop-color="#E6A000"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8E8"/>
+      <stop offset="100%" stop-color="#A0A0A0"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="100%" stop-color="#00BCF2"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2040"/>
+      <stop offset="100%" stop-color="#050a1a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gGlow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)" rx="24"/>
+  <!-- Gold halo -->
+  <circle cx="200" cy="138" r="75" fill="none" stroke="url(#gold)" stroke-width="5.5" filter="url(#gGlow)" opacity="0.95"/>
+  <circle cx="200" cy="138" r="68" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.35"/>
+  <!-- Cloud + circuit icon -->
+  <g transform="translate(168,108)" filter="url(#glow)">
+    <path d="M32 30Q17 30 17 18Q17 8 27 7Q26 0 35 0Q43-2 46 7Q52 5 54 13Q62 13 62 22Q62 30 48 30Z" fill="url(#blue)" opacity="0.9"/>
+    <circle cx="26" cy="16" r="2.5" fill="#00BCF2"/>
+    <circle cx="38" cy="16" r="2.5" fill="#00BCF2"/>
+    <circle cx="50" cy="16" r="2.5" fill="#00BCF2"/>
+    <circle cx="32" cy="23" r="2.5" fill="#00BCF2"/>
+    <circle cx="44" cy="23" r="2.5" fill="#00BCF2"/>
+    <line x1="26" y1="16" x2="50" y2="16" stroke="#00BCF2" stroke-width="1.5" opacity="0.7"/>
+    <line x1="32" y1="16" x2="32" y2="23" stroke="#00BCF2" stroke-width="1.5" opacity="0.7"/>
+    <line x1="44" y1="16" x2="44" y2="23" stroke="#00BCF2" stroke-width="1.5" opacity="0.7"/>
+    <line x1="32" y1="23" x2="44" y2="23" stroke="#00BCF2" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  <!-- Left wing layers -->
+  <path d="M200 162Q168 152 135 142Q102 130 72 118Q52 110 36 98Q48 112 66 122Q96 138 130 150Q162 162 192 168Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.7" opacity="0.92"/>
+  <path d="M200 168Q162 160 124 148Q88 134 58 116Q38 104 24 90Q38 106 58 117Q88 134 128 148Q166 161 196 170Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.5" opacity="0.78"/>
+  <path d="M200 173Q158 166 116 152Q80 138 50 120Q30 108 18 94Q33 110 53 120Q83 137 118 151Q158 165 196 175Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.4" opacity="0.65"/>
+  <!-- Right wing layers -->
+  <path d="M200 162Q232 152 265 142Q298 130 328 118Q348 110 364 98Q352 112 334 122Q304 138 270 150Q238 162 208 168Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.7" opacity="0.92"/>
+  <path d="M200 168Q238 160 276 148Q312 134 342 116Q362 104 376 90Q362 106 342 117Q312 134 272 148Q234 161 204 170Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.5" opacity="0.78"/>
+  <path d="M200 173Q242 166 284 152Q320 138 350 120Q370 108 382 94Q367 110 347 120Q317 137 282 151Q242 165 204 175Z" fill="url(#wing)" stroke="#F5B301" stroke-width="0.4" opacity="0.65"/>
+  <!-- Wing gold tips -->
+  <path d="M36 98Q22 88 14 76Q24 88 36 96Q50 108 66 114Z" fill="url(#gold)" opacity="0.55"/>
+  <path d="M364 98Q378 88 386 76Q376 88 364 96Q350 108 334 114Z" fill="url(#gold)" opacity="0.55"/>
+  <!-- Eagle head -->
+  <ellipse cx="200" cy="156" rx="21" ry="25" fill="white" opacity="0.96"/>
+  <ellipse cx="200" cy="182" rx="17" ry="21" fill="#1a2040"/>
+  <ellipse cx="200" cy="172" rx="13" ry="14" fill="white" opacity="0.6"/>
+  <!-- Eye -->
+  <circle cx="192" cy="152" r="4" fill="#0d1020"/>
+  <circle cx="192" cy="152" r="2.5" fill="url(#gold)" filter="url(#glow)"/>
+  <circle cx="191" cy="151" r="1" fill="white"/>
+  <!-- Beak -->
+  <path d="M196 161Q200 168 196 170Q200 166 204 161Z" fill="url(#gold)"/>
+  <!-- Circuit accents -->
+  <circle cx="78" cy="188" r="3.5" fill="none" stroke="#F5B301" stroke-width="1.5" opacity="0.55" filter="url(#glow)"/>
+  <line x1="78" y1="185" x2="78" y2="170" stroke="#F5B301" stroke-width="1.5" opacity="0.4"/>
+  <line x1="78" y1="170" x2="96" y2="170" stroke="#F5B301" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="322" cy="188" r="3.5" fill="none" stroke="url(#blue)" stroke-width="1.5" opacity="0.55" filter="url(#glow)"/>
+  <line x1="322" y1="185" x2="322" y2="170" stroke="url(#blue)" stroke-width="1.5" opacity="0.4"/>
+  <line x1="322" y1="170" x2="304" y2="170" stroke="url(#blue)" stroke-width="1.5" opacity="0.4"/>
+  <!-- Shield -->
+  <path d="M118 210L282 210L294 232L272 272L200 290L128 272L106 232Z" fill="#0a0e1c" stroke="url(#gold)" stroke-width="2.5"/>
+  <path d="M123 213L277 213L288 233L267 268L200 284L133 268L112 233Z" fill="none" stroke="url(#gold)" stroke-width="0.7" opacity="0.35"/>
+  <!-- BOB text -->
+  <text x="200" y="247" font-family="Arial Black,Impact,sans-serif" font-size="40" font-weight="900" fill="url(#silver)" text-anchor="middle" letter-spacing="3">BOB</text>
+  <!-- THE BUILDER -->
+  <text x="200" y="267" font-family="Arial,sans-serif" font-size="13.5" font-weight="800" fill="url(#gold)" text-anchor="middle" letter-spacing="3.5">THE BUILDER</text>
+  <!-- Divider -->
+  <line x1="110" y1="272" x2="290" y2="272" stroke="url(#gold)" stroke-width="0.7" opacity="0.45"/>
+  <!-- Subtitle -->
+  <text x="200" y="282" font-family="Arial,sans-serif" font-size="6" fill="#8888aa" text-anchor="middle" letter-spacing="1.2">SOFTWARE ENGINEER  |  CLOUD ARCHITECT  |  PRODUCT BUILDER</text>
+  <!-- City skyline -->
+  <g fill="url(#blue)" opacity="0.22" transform="translate(130,272)">
+    <rect x="0" y="9" width="8" height="12"/><rect x="10" y="4" width="10" height="17"/>
+    <rect x="22" y="7" width="7" height="14"/><rect x="31" y="1" width="12" height="20"/>
+    <rect x="45" y="6" width="8" height="15"/><rect x="55" y="3" width="10" height="18"/>
+    <rect x="67" y="8" width="7" height="13"/><rect x="76" y="2" width="11" height="19"/>
+    <rect x="89" y="7" width="8" height="14"/><rect x="99" y="5" width="9" height="16"/>
+    <rect x="110" y="9" width="7" height="12"/><rect x="119" y="3" width="10" height="18"/>
+    <rect x="131" y="6" width="9" height="15"/>
+  </g>
+  <!-- CODE CLOUD SCALE -->
+  <text x="158" y="314" font-family="Arial,sans-serif" font-size="8.5" fill="url(#blue)" font-weight="700" letter-spacing="2" filter="url(#glow)">CODE.</text>
+  <text x="200" y="314" font-family="Arial,sans-serif" font-size="8.5" fill="url(#gold)" font-weight="700" letter-spacing="2" text-anchor="middle" filter="url(#gGlow)">CLOUD.</text>
+  <text x="244" y="314" font-family="Arial,sans-serif" font-size="8.5" fill="url(#blue)" font-weight="700" letter-spacing="2" filter="url(#glow)">SCALE.</text>
+</svg>
