@@ -8,6 +8,7 @@ import About from './sections/About'
 import Skills from './sections/Skills'
 import Projects from './sections/Projects'
 import Experience from './sections/Experience'
+import Research from './sections/Research'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import CommandPalette from './components/CommandPalette'
@@ -44,6 +45,7 @@ function PortfolioLayout() {
         <Skills />
         <Projects />
         <Experience />
+        <Research />
         <Contact />
       </main>
       <Footer />

@@ -8,6 +8,7 @@ const commands = [
   { id: 'skills', label: 'View Skills', icon: Code2, href: '#skills', category: 'Navigate' },
   { id: 'projects', label: 'Browse Projects', icon: Layers, href: '#projects', category: 'Navigate' },
   { id: 'experience', label: 'View Experience', icon: Briefcase, href: '#experience', category: 'Navigate' },
+  { id: 'research', label: 'Research & Certifications', icon: Briefcase, href: '#research', category: 'Navigate' },
   { id: 'contact', label: 'Contact Me', icon: Mail, href: '#contact', category: 'Navigate' },
 ]
 
