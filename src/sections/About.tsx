@@ -1,19 +1,33 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { MapPin, Coffee, Code2, Target, Award, Heart, Rocket } from 'lucide-react'
+import { MapPin, GraduationCap, Code2, Target, Award, Rocket, CalendarDays } from 'lucide-react'
 
 const highlights = [
   { icon: MapPin, label: 'Location', value: 'Nigeria, Africa' },
-  { icon: Code2, label: 'Specialty', value: 'Cloud Architecture' },
-  { icon: Coffee, label: 'Fuel', value: '∞ Coffee cups' },
-  { icon: Target, label: 'Focus', value: 'Scalable Systems' },
+  { icon: Code2, label: 'Core Stack', value: 'Python · TypeScript · Rust' },
+  { icon: GraduationCap, label: 'Education', value: 'BSc CS – FUD (2026)' },
+  { icon: Target, label: 'Focus', value: 'Scalable Backend Systems' },
 ]
 
 const values = [
-  { icon: Award, title: 'Excellence First', description: 'Every line of code and architecture decision crafted for excellence, performance, and long-term maintainability.' },
-  { icon: Heart, title: 'Africa-Focused', description: 'Building technology that solves real problems for African businesses and empowers the next generation of builders.' },
-  { icon: Rocket, title: 'Ship Fast, Scale Right', description: 'Balancing velocity with quality — launching MVPs quickly then scaling them to handle millions of users.' },
+  {
+    icon: Award,
+    title: 'Excellence in Engineering',
+    description: 'Every system I architect is built for performance, security, and long-term maintainability — production-grade from day one.',
+  },
+  {
+    icon: Rocket,
+    title: 'Ship Fast, Scale Right',
+    description: 'I balance velocity with quality — launching MVPs rapidly then scaling them to handle millions of requests daily.',
+  },
+  {
+    icon: CalendarDays,
+    title: 'Africa-Focused Impact',
+    description: 'As COO at Naszat Labs, I\'m driving technology solutions that empower African businesses and communities at scale.',
+  },
 ]
+
+const SCHEDULE_URL = 'https://calendar.app.google/mwEprcnfiZDLtUFGA'
 
 export default function About() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
@@ -22,6 +36,7 @@ export default function About() {
     <section id="about" ref={ref} className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -36,11 +51,23 @@ export default function About() {
               <span className="text-gradient-gold">The Build</span>
             </h2>
             <div className="space-y-4 text-gray-400 font-body leading-relaxed">
-              <p>I'm Abdulhaleem Nasredeen Hamza — a software engineer, cloud architect, and product builder with 5+ years crafting scalable systems that power businesses across Africa and beyond.</p>
-              <p>From architecting microservices handling millions of daily requests to deploying DeFi protocols managing millions in TVL, I bridge complex technical challenges with elegant, production-ready solutions.</p>
-              <p>As the founder of Nazat Labs and Lead Engineer at Naszat Ideal Concepts, I'm on a mission to build Africa's digital infrastructure — one scalable system at a time.</p>
+              <p>
+                I'm Abdulhaleem Nasredeen Hamza — a results-driven backend engineer and cloud architect
+                with 5+ years building scalable, high-performance systems. Proficient in Python, TypeScript,
+                and Rust, with deep expertise in Django, Flask, NestJS, and Actix frameworks.
+              </p>
+              <p>
+                Currently serving as <span className="text-white font-medium">Chief Operations Officer at Naszat Laboratories</span> and
+                Core Developer at Pyrax LLC, I simultaneously architect blockchain systems in Rust and
+                lead operational strategy across Africa's tech ecosystem.
+              </p>
+              <p>
+                From Solana smart contracts to government-grade cloud infrastructure serving Nigerian state
+                ministries — I deliver end-to-end solutions that drive efficiency and real-world impact.
+              </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 mt-8">
+
+            <div className="grid grid-cols-2 gap-4 mt-8 mb-8">
               {highlights.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -59,8 +86,19 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
+
+            <a
+              href={SCHEDULE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <CalendarDays className="w-4 h-4" />
+              Schedule a Meeting
+            </a>
           </motion.div>
 
+          {/* Right */}
           <div className="space-y-4">
             {values.map((v, i) => (
               <motion.div
@@ -81,25 +119,50 @@ export default function About() {
                 </div>
               </motion.div>
             ))}
+
+            {/* Certifications */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.65 }}
+              className="card"
+            >
+              <p className="text-xs text-gray-500 font-code mb-3 uppercase tracking-widest">Certifications</p>
+              <div className="space-y-2.5">
+                {[
+                  { name: 'Udacity Full-Stack NanoDegree', issuer: 'ALX Scholarship · 2021', color: '#F5B301' },
+                  { name: 'Backend Specialist', issuer: 'Coursera — IBM & AWS', color: '#0078D4' },
+                ].map((cert) => (
+                  <div key={cert.name} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: cert.color }} />
+                    <div>
+                      <p className="text-sm text-white font-medium">{cert.name}</p>
+                      <p className="text-xs text-gray-500 font-code">{cert.issuer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Code card */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.75 }}
               className="glass rounded-2xl p-5 border border-white/5"
             >
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                <span className="text-gray-600 text-xs ml-2 font-code">bob.ts</span>
+                <span className="text-gray-600 text-xs ml-2 font-code">bob.py</span>
               </div>
-              <pre className="text-xs text-gray-300 font-code leading-relaxed overflow-x-auto">{`const bob = {
-  name: "Abdulhaleem Nasredeen",
-  alias: "BOB THE BUILDER",
-  stack: ["TypeScript","Cloud","Web3"],
-  mission: "Building Africa's Future",
-  available: true, // hire me! 🚀
-}`}</pre>
+              <pre className="text-xs text-gray-300 font-code leading-relaxed overflow-x-auto">{`class BobTheBuilder:
+    name = "Abdulhaleem Nasredeen"
+    role = ["Backend Eng", "Cloud Arch", "COO"]
+    stack = ["Python", "TypeScript", "Rust"]
+    mission = "Building Africa's Future"
+    available = True  # hire me! 🚀`}</pre>
             </motion.div>
           </div>
         </div>

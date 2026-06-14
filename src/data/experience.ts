@@ -3,71 +3,109 @@ export interface Experience {
   company: string
   role: string
   period: string
+  location: string
   type: string
   description: string[]
   tech: string[]
   current: boolean
+  link?: string
 }
 
 export const experiences: Experience[] = [
   {
-    id: 'nazat-labs',
-    company: 'Nazat Labs',
-    role: 'Founder & CTO',
-    period: '2024 - Present',
-    type: 'Founder',
-    description: [
-      'Founded and leading a technology innovation lab building next-gen developer tools',
-      'Architecting cloud-native infrastructure solutions for African startups',
-      'Building open-source libraries used by thousands of developers',
-      'Spearheading R&D in Web3, AI, and distributed systems'
-    ],
-    tech: ['Go', 'Rust', 'TypeScript', 'Kubernetes', 'Terraform', 'AWS'],
-    current: true
-  },
-  {
-    id: 'naszat',
-    company: 'Naszat Ideal Concepts',
-    role: 'Lead Software Engineer & Cloud Architect',
-    period: '2022 - Present',
+    id: 'kindlepath',
+    company: 'KindlePath Digital Initiative',
+    role: 'Backend & Cloud Architect',
+    period: 'Mar 2026 – Present',
+    location: 'Africa (Hybrid)',
     type: 'Full-time',
     description: [
-      'Led architecture and development of 5+ enterprise-grade applications',
-      'Designed and deployed cloud infrastructure serving 100k+ users',
-      'Implemented microservices architecture reducing system latency by 60%',
-      'Mentored team of 8 engineers across frontend, backend, and DevOps'
+      'Architecting scalable cloud-native backend systems and digital infrastructures for enterprise clients',
+      'Designing secure APIs, databases, and deployment workflows for high-availability applications',
+      'Managing cloud environments, automation pipelines, and system reliability at scale',
+      'Driving backend optimization, scalability, and infrastructure efficiency across multiple product lines',
     ],
-    tech: ['Node.js', 'React', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Redis'],
-    current: true
+    tech: ['AWS', 'GCP', 'Docker', 'PostgreSQL', 'Python', 'NestJS', 'CI/CD'],
+    current: true,
+  },
+  {
+    id: 'pyrax',
+    company: 'Pyrax LLC',
+    role: 'Core Developer',
+    period: 'Mar 2026 – Present',
+    location: 'Remote',
+    type: 'Contract',
+    description: [
+      'Developing scalable blockchain-based backend systems and decentralized applications',
+      'Building secure and efficient Web3 infrastructures that power the Pyrax chain',
+      'Designing high-performance backend architectures using Rust and modern blockchain technologies',
+      'Collaborating on smart infrastructure development and decentralized ecosystem growth',
+    ],
+    tech: ['Rust', 'Blockchain', 'Web3', 'Actix', 'Anchor', 'Solana'],
+    current: true,
+  },
+  {
+    id: 'naszat-labs',
+    company: 'Naszat Laboratories',
+    role: 'Chief Operations Officer',
+    period: 'Jul 2025 – Present',
+    location: 'Abuja, Nigeria (Hybrid)',
+    type: 'Executive',
+    description: [
+      'Leading operational strategy and execution across all technology initiatives at Naszat Labs',
+      'Overseeing product development workflows and cross-functional team coordination',
+      'Managing technology project delivery across education, fintech, and digital infrastructure sectors',
+      'Coordinating partnerships, ecosystem growth, and strategic business development across Africa',
+    ],
+    tech: ['Strategy', 'Operations', 'TypeScript', 'Cloud', 'Python', 'Team Leadership'],
+    current: true,
+    link: 'https://naszat.tech',
   },
   {
     id: 'corestream',
     company: 'Corestream Nigeria',
-    role: 'Senior Backend Engineer',
-    period: '2020 - 2022',
+    role: 'Software Engineer',
+    period: 'Mar 2025 – May 2026',
+    location: 'Plateau, Nigeria',
+    type: 'Contract',
+    description: [
+      'Participated in all system architecture and design decisions for critical infrastructure projects',
+      'Built scalable full-stack systems and authored CI/CD workflows for seamless production deployments',
+      'Led and mentored a team of developers across the full-stack domain',
+      'Ensured OWASP compliance, security testing, and uptime with proper recovery mechanisms',
+    ],
+    tech: ['TypeScript', 'Python', 'Docker', 'CI/CD', 'PostgreSQL', 'React', 'AWS'],
+    current: false,
+  },
+  {
+    id: 'startup-jigawa',
+    company: 'Startup Jigawa',
+    role: 'Software Development Partner',
+    period: 'May 2024 – Feb 2026',
+    location: 'Jigawa, Nigeria',
     type: 'Full-time',
     description: [
-      'Developed high-performance API services handling 1M+ requests/day',
-      'Optimized database queries reducing response times by 40%',
-      'Built real-time data pipelines using event-driven architecture',
-      'Implemented security protocols achieving SOC 2 compliance'
+      'Led development of critical government systems including Agric Loan and Health Reporting platforms',
+      'Supervised software training programs and managed in-house products for state ministries',
+      'Led a team of 7–10 developers delivering client projects and internal products',
+      'Designed system architectures maintaining highest industry standards for government-grade software',
     ],
-    tech: ['Python', 'Django', 'PostgreSQL', 'Celery', 'Redis', 'Docker', 'AWS'],
-    current: false
+    tech: ['Django', 'React', 'PostgreSQL', 'AWS', 'Docker', 'Python', 'TypeScript'],
+    current: false,
   },
   {
     id: 'veladao',
-    company: 'VelaDAO',
-    role: 'Web3 Lead Engineer',
-    period: '2021 - 2023',
+    company: 'Veladao Crowdfunding Platform',
+    role: 'Product Lead & Developer',
+    period: 'Jul 2024 – Oct 2024',
+    location: 'Remote',
     type: 'Contract',
     description: [
-      'Designed and deployed Solidity smart contracts managing $2M+ TVL',
-      'Built DAO governance mechanisms with quadratic voting',
-      'Created DeFi protocol integrations with major blockchain networks',
-      'Implemented security auditing processes preventing $500k in potential exploits'
+      'Spearheaded the Solana blockchain-based crowdfunding platform with milestone-based donations using SOL and USDC',
+      'Integrated governance features, DAO voting mechanisms, and an impact reporting system',
     ],
-    tech: ['Solidity', 'Hardhat', 'Web3.js', 'React', 'IPFS', 'Ethereum'],
-    current: false
-  }
+    tech: ['Solana', 'Anchor', 'Rust', 'TypeScript', 'React', 'Web3.js'],
+    current: false,
+    link: 'https://veladao.io',
+  },
 ]
