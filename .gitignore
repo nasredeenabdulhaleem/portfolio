@@ -61,6 +61,9 @@ public
 # Mac files
 .DS_Store
 
+# Claude Code internal
+.claude/
+
 # Yarn
 yarn-error.log
 .pnp/
