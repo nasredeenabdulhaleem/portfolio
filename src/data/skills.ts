@@ -1,7 +1,6 @@
 export interface Skill {
   name: string
   level: number
-  icon?: string
 }
 
 export interface SkillCategory {
@@ -14,20 +13,18 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'software',
-    title: 'Software Engineering',
+    id: 'languages',
+    title: 'Languages & Frameworks',
     icon: 'Code2',
     color: '#F5B301',
     skills: [
-      { name: 'TypeScript', level: 95 },
-      { name: 'Python', level: 90 },
-      { name: 'Node.js', level: 95 },
-      { name: 'Go', level: 75 },
-      { name: 'Rust', level: 60 },
-      { name: 'Java', level: 80 },
-      { name: 'React', level: 95 },
-      { name: 'Next.js', level: 90 },
-    ]
+      { name: 'Python', level: 92 },
+      { name: 'TypeScript', level: 90 },
+      { name: 'Rust', level: 78 },
+      { name: 'Java', level: 74 },
+      { name: 'Django / Flask', level: 88 },
+      { name: 'NestJS / Actix', level: 82 },
+    ],
   },
   {
     id: 'cloud',
@@ -35,29 +32,26 @@ export const skillCategories: SkillCategory[] = [
     icon: 'Cloud',
     color: '#0078D4',
     skills: [
-      { name: 'AWS', level: 90 },
-      { name: 'Azure', level: 80 },
-      { name: 'Docker', level: 95 },
-      { name: 'Kubernetes', level: 85 },
-      { name: 'Terraform', level: 80 },
-      { name: 'Firebase', level: 90 },
-      { name: 'CI/CD', level: 90 },
-      { name: 'Nginx', level: 85 },
-    ]
+      { name: 'AWS', level: 88 },
+      { name: 'GCP', level: 76 },
+      { name: 'Docker', level: 92 },
+      { name: 'CI/CD Pipelines', level: 88 },
+      { name: 'Bash & Automation', level: 85 },
+      { name: 'Microservices Arch', level: 90 },
+    ],
   },
   {
     id: 'databases',
-    title: 'Databases',
+    title: 'Databases & APIs',
     icon: 'Database',
     color: '#34D399',
     skills: [
       { name: 'PostgreSQL', level: 90 },
       { name: 'MongoDB', level: 85 },
-      { name: 'Redis', level: 85 },
-      { name: 'Firestore', level: 90 },
-      { name: 'MySQL', level: 85 },
-      { name: 'Elasticsearch', level: 75 },
-    ]
+      { name: 'Redis', level: 80 },
+      { name: 'Firebase / Firestore', level: 84 },
+      { name: 'RESTful API Design', level: 92 },
+    ],
   },
   {
     id: 'web3',
@@ -65,25 +59,24 @@ export const skillCategories: SkillCategory[] = [
     icon: 'Layers',
     color: '#818CF8',
     skills: [
-      { name: 'Solidity', level: 80 },
-      { name: 'Web3.js', level: 85 },
-      { name: 'Ethers.js', level: 85 },
-      { name: 'Hardhat', level: 80 },
-      { name: 'IPFS', level: 75 },
-      { name: 'Smart Contracts', level: 80 },
-    ]
+      { name: 'Solana / Anchor', level: 82 },
+      { name: 'Rust Smart Contracts', level: 78 },
+      { name: 'Web3.js / Ethers.js', level: 80 },
+      { name: 'DeFi Protocols', level: 75 },
+      { name: 'Decentralized Apps', level: 80 },
+    ],
   },
   {
-    id: 'ai',
-    title: 'AI & ML Systems',
+    id: 'leadership',
+    title: 'Architecture & Leadership',
     icon: 'Brain',
     color: '#F87171',
     skills: [
-      { name: 'LangChain', level: 75 },
-      { name: 'OpenAI API', level: 85 },
-      { name: 'Vector DBs', level: 70 },
-      { name: 'RAG Systems', level: 75 },
-      { name: 'Python ML', level: 70 },
-    ]
-  }
+      { name: 'System Design', level: 90 },
+      { name: 'Cloud Architecture', level: 88 },
+      { name: 'Team Leadership', level: 88 },
+      { name: 'OWASP / Security', level: 82 },
+      { name: 'Operational Strategy', level: 86 },
+    ],
+  },
 ]

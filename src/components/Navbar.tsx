@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Command, Zap } from 'lucide-react'
+import { Menu, X, Command, CalendarDays } from 'lucide-react'
 import { useAppStore } from '../store/useAppStore'
 
 const navItems = [
@@ -10,6 +10,8 @@ const navItems = [
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
+
+const SCHEDULE_URL = 'https://calendar.app.google/mwEprcnfiZDLtUFGA'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -37,19 +39,20 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2.5 group"
         >
-          <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center">
-            <Zap className="w-4 h-4 text-background" strokeWidth={3} />
+          <img src="/logo.svg" alt="BOB THE BUILDER" className="w-9 h-9 transition-transform group-hover:scale-105" />
+          <div className="hidden sm:block">
+            <span className="font-heading font-bold text-sm text-white leading-none block">BOB THE BUILDER</span>
+            <span className="font-code text-xs text-gold/60 leading-none">Backend · Cloud · Web3</span>
           </div>
-          <span className="font-heading font-bold text-xl text-white">
-            BOB<span className="text-gold">.</span>
-          </span>
         </button>
 
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-7">
           {navItems.map((item) => (
             <button
               key={item.label}
@@ -62,19 +65,26 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* Actions */}
+        <div className="hidden md:flex items-center gap-2.5">
           <button
             onClick={() => setCommandPaletteOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 glass border border-white/10 rounded-lg text-sm text-gray-400 hover:text-white hover:border-gold/30 transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 glass border border-white/10 rounded-lg text-xs text-gray-400 hover:text-white hover:border-gold/30 transition-all font-code"
           >
-            <Command className="w-3.5 h-3.5" />
-            <span className="font-code text-xs">⌘K</span>
+            <Command className="w-3 h-3" /> ⌘K
           </button>
-          <button onClick={() => scrollTo('#contact')} className="btn-primary text-sm py-2">
-            Hire Me
-          </button>
+          <a
+            href={SCHEDULE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 btn-primary text-sm py-2"
+          >
+            <CalendarDays className="w-3.5 h-3.5" />
+            Schedule
+          </a>
         </div>
 
+        {/* Mobile toggle */}
         <button
           className="md:hidden text-gray-400 hover:text-white transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -83,6 +93,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -101,12 +112,14 @@ export default function Navbar() {
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={() => { scrollTo('#contact'); setMobileOpen(false) }}
-                className="btn-primary w-full mt-3"
+              <a
+                href={SCHEDULE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full text-center flex items-center justify-center gap-2 mt-3"
               >
-                Hire Me
-              </button>
+                <CalendarDays className="w-4 h-4" /> Schedule a Meeting
+              </a>
             </div>
           </motion.div>
         )}

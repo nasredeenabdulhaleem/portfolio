@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Github, Linkedin, Twitter, Youtube, Mail, Zap, ArrowUp } from 'lucide-react'
+import { Github, Linkedin, Twitter, Mail, ArrowUp, CalendarDays } from 'lucide-react'
 
 const socials = [
   { icon: Github, href: 'https://github.com/nasredeenabdulhaleem', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'X' },
-  { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/nasredeen-software-engineer', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/algonasr', label: 'X (@algonasr)' },
   { icon: Mail, href: 'mailto:nabdulhaleem09@gmail.com', label: 'Email' },
 ]
 
@@ -17,6 +16,8 @@ const navLinks = [
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
+
+const SCHEDULE_URL = 'https://calendar.app.google/mwEprcnfiZDLtUFGA'
 
 export default function Footer() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
@@ -35,22 +36,18 @@ export default function Footer() {
             {/* Brand */}
             <div className="text-center md:text-left">
               <div className="flex items-center gap-2 mb-1.5 justify-center md:justify-start">
-                <div className="w-7 h-7 rounded-lg bg-gold flex items-center justify-center">
-                  <Zap className="w-3.5 h-3.5 text-background" strokeWidth={3} />
+                <img src="/logo.svg" alt="BOB THE BUILDER" className="w-10 h-10" />
+                <div>
+                  <span className="font-heading font-bold text-base text-white block leading-none">BOB THE BUILDER</span>
+                  <span className="font-code text-xs text-gold/60 tracking-widest">CODE · CLOUD · SCALE</span>
                 </div>
-                <span className="font-heading font-bold text-lg">BOB<span className="text-gold">.</span></span>
               </div>
-              <p className="text-xs text-gray-600 font-code tracking-widest">CODE · CLOUD · SCALE</p>
             </div>
 
             {/* Nav */}
             <nav className="flex flex-wrap gap-5 justify-center">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm text-gray-500 hover:text-white transition-colors"
-                >
+                <a key={link.label} href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">
                   {link.label}
                 </a>
               ))}
@@ -63,6 +60,19 @@ export default function Footer() {
             >
               <ArrowUp className="w-4 h-4" />
             </button>
+          </div>
+
+          {/* Schedule CTA */}
+          <div className="flex justify-center mb-8">
+            <a
+              href={SCHEDULE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 glass-gold rounded-full text-sm text-gold font-medium hover:bg-gold/10 transition-all"
+            >
+              <CalendarDays className="w-4 h-4" />
+              Schedule a Meeting
+            </a>
           </div>
 
           {/* Socials */}
@@ -84,7 +94,7 @@ export default function Footer() {
           {/* Bottom */}
           <div className="text-center pt-6 border-t border-white/5">
             <p className="text-xs text-gray-600 font-code">
-              © {new Date().getFullYear()} Abdulhaleem Nasredeen Hamza · Crafted with{' '}
+              © {new Date().getFullYear()} Abdulhaleem Nasredeen Hamza · COO @ Naszat Laboratories · Crafted with{' '}
               <span className="text-gold">♥</span> in Nigeria
             </p>
             <p className="text-xs text-gray-700 mt-1 font-code">
