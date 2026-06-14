@@ -125,7 +125,7 @@ export default function Contact() {
             ))}
 
             <a
-              href="https://wa.me/2348000000000"
+              href="https://wa.me/2348129096356"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 glass-gold rounded-xl hover:bg-gold/10 transition-all group"
